@@ -1,0 +1,44 @@
+[
+    {
+        "titulo": "Zanahoria",
+        "urlimagen": "https://agrosemval.com/wp-content/uploads/2020/05/zanahoria-royal-chantenay-ipc-01.jpg",
+        "descripcion": "Raíz comestible rica en vitamina A.",
+        "informacion": "La zanahoria se cultiva mejor en suelos sueltos y profundos.\nPaso a paso:\n1) Preparar la tierra.\n2) Sembrar semillas a 1 cm de profundidad.\n3) Regar regularmente sin encharcar.\n4) Aclarar las plantas al crecer.\n5) Cosechar en 70-80 días.",
+        "urlvideo": "https://www.youtube.com/embed/b370Jpruc_0?si=6VFbEt3Eii_sBwkE"
+    },
+    {
+        "titulo": "Lechuga",
+        "urlimagen": "https://la-canasta.org/wp-content/uploads/2019/02/Lechuga_escarola-600x600.jpg",
+        "descripcion": "Verdura de hoja verde muy usada en ensaladas.",
+        "informacion": "La lechuga requiere clima templado y riego constante.\nPaso a paso:\n1) Preparar suelo bien drenado.\n2) Sembrar semillas en semillero.\n3) Trasplantar a los 20 días.\n4) Mantener humedad sin encharcar.\n5) Cosechar en 30-60 días.",
+        "urlvideo": "https://www.youtube.com/embed/2eXjas5lXA8?si=ekqlNL0L6ooO5lo2"
+    },
+    {
+        "titulo": "Tomate",
+        "urlimagen": "https://agrosemval.com/wp-content/uploads/2020/05/tomate-chonto-santa-clara-ipc-01.jpg",
+        "descripcion": "Fruto rojo ampliamente utilizado en la cocina.",
+        "informacion": "El tomate necesita sol directo y suelo fértil.\nPaso a paso:\n1) Sembrar en semillero.\n2) Trasplantar cuando tengan 4 hojas.\n3) Regar regularmente y evitar mojar hojas.\n4) Podar para mejor crecimiento.\n5) Cosechar a los 80-100 días.",
+        "urlvideo": "https://www.youtube.com/embed/hLmOfHPRtfQ?si=jIojuQf_t3Tk_9wf"
+    },
+    {
+        "titulo": "Maíz",
+        "urlimagen": "https://algarabia.com/wp-content/uploads/2021/09/la-historia-del-maiz.jpg",
+        "descripcion": "Cereal básico en muchas culturas.",
+        "informacion": "Prefiere clima cálido y suelo bien drenado.\nPaso a paso:\n1) Preparar terreno y eliminar maleza.\n2) Sembrar semillas a 3-5 cm de profundidad.\n3) Mantener riego moderado.\n4) Controlar plagas.\n5) Cosechar cuando las hojas se sequen.",
+        "urlvideo": "https://www.youtube.com/embed/1P6yJHOBTp0?si=deOOPXQyfpkmF6cf"
+    },
+    {
+        "titulo": "Papa",
+        "urlimagen": "https://la-canasta.org/wp-content/uploads/2019/02/CAN009-600x600.jpg",
+        "descripcion": "Tubérculo muy consumido en todo el mundo.",
+        "informacion": "Cultivo de clima frío a templado.\nPaso a paso:\n1) Preparar suelo suelto y aireado.\n2) Plantar tubérculos con ojos.\n3) Cubrir y regar regularmente.\n4) Amontonar tierra alrededor de las plantas.\n5) Cosechar en 90-120 días.",
+        "urlvideo": "https://www.youtube.com/embed/WPjnjQiTYwQ?si=7r3t9BAQs7PZ7YnM"
+    },
+    {
+        "titulo": "Cebolla",
+        "urlimagen": "https://agrosemval.com/wp-content/uploads/2020/05/cebolla-cabezona-amarilla-ipc-01.jpg",
+        "descripcion": "Bulbo usado como condimento.",
+        "informacion": "Requiere suelo ligero y buen drenaje.\nPaso a paso:\n1) Sembrar semillas o plantines.\n2) Mantener humedad constante.\n3) Controlar malezas.\n4) Evitar exceso de agua.\n5) Cosechar cuando hojas amarilleen.",
+        "urlvideo": "https://www.youtube.com/embed/GvGKfJtjQSQ?si=qsTAi7cLl55SSOjr"
+    }
+]

@@ -45,6 +45,40 @@ if(inputusuarioreg && inputcontraseñareg && btnregistrarse){
     }
 }
 
+// REGISTRAR ADMIN
+
+const inputusuarioadmin = document.getElementById("usuario_admin");
+const inputcontraseñaadmin = document.getElementById("contraseña_admin");
+const btnregistraradmin = document.getElementById("registraradmin");
+
+if(inputusuarioadmin && inputcontraseñaadmin && btnregistraradmin){
+    btnregistraradmin.addEventListener("click", ()=>{
+        const usuario = inputusuarioadmin.value;
+        const contraseña = inputcontraseñaadmin.value;
+        registro(usuario, contraseña);
+    })
+
+    function registro(usuario, contraseña){
+        const nuevousuario = {
+            usuario: usuario,
+            contraseña: contraseña,
+            tipo: "admin"
+        };
+        array_usuarios.push(nuevousuario);
+        localStorage.setItem("array_usuarios", JSON.stringify(array_usuarios));
+
+        const alertDIV = document.getElementById("alertDIV");
+        const alert = document.createElement("div");
+        alert.className = "alert alert-dark";
+        alert.role = "alert"
+        alert.textContent = "Se registro el nuevo admin!"
+        alertDIV.appendChild(alert);
+        setTimeout(() => {
+            alert.remove();
+        }, 5000);
+    }
+}
+
 // LOGIN
 const inputusuario = document.getElementById("usuario");
 const inputcontraseña = document.getElementById("contraseña");

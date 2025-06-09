@@ -51,8 +51,53 @@
         </div>
     </nav>
 
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-6 text-center p-4 bg-success bg-opacity-50 rounded-5">
+
+                <div id="alertDIV" class="col">
+                    
+                </div>
+
+                <label class="form-label fw-bold mt-2">TITULO</label>
+                <input id="titulo" type="text" class="form-control">
+
+                <label class="form-label fw-bold mt-2">URL DE IMAGEN 600X600</label>
+                <input id="urlimagen" type="text" class="form-control">
+
+                <label for="descripcion" class="form-label fw-bold mt-2">DESCRIPCION</label>
+                <textarea id="descripcion" class="form-control" rows="2" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <label for="informacion" class="form-label fw-bold mt-2">INFORMACIÓN</label>
+                <textarea id="informacion" class="form-control" rows="8" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <label class="form-label fw-bold mt-2">URL DE VIDEO TUTORIAL</label>
+                <input id="inputurlvideo" type="text" class="form-control">
+
+                <button id="btnagregar" class="btn btn-dark mt-4">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button id="btnquemar" class="btn btn-dark mt-4 w-100" style="max-width: 600px;">
+                    quemar info
+                </button>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <button id="btnborrar" class="btn btn-dark mt-4 w-100" style="max-width: 600px;">
+                    borrar info
+                </button>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/contenido.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const usuarioActivo = JSON.parse(localStorage.getItem("usuario_activo"));
