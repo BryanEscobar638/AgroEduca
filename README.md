@@ -1,4 +1,4 @@
-xd<div align="center">
+<div align="center">
 <h1 align="center">
 AgroEduca 🌱 (Español)
 </h1>
