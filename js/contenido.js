@@ -191,6 +191,13 @@ if (containerinfo){
         h1.className = "display-4 fw-bold text-uppercase";
         h1.textContent = contenido.titulo
 
+        const botonPDF = document.createElement("button");
+        botonPDF.className = "btn btn-danger mb-3";
+        botonPDF.textContent = "Descargar PDF";
+        botonPDF.addEventListener("click", () => {
+            generarPDF(contenido);
+        }); 
+
         const col2 = document.createElement("div")
         col2.className = "col-12";
 
@@ -236,6 +243,7 @@ if (containerinfo){
         card.appendChild(cardrow);
         col2.appendChild(card);
         col1.appendChild(h1);
+        col1.appendChild(botonPDF);
         fila.appendChild(col1);
         fila.appendChild(col2);
         fila.appendChild(col3);
@@ -245,6 +253,35 @@ if (containerinfo){
         containerinfo.innerText = "Contenido no encontrado."
     }
 }
+
+async function generarPDF(contenido) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // TÍTULO: Mayúscula, grande, negrilla y centrado
+    const titulo = contenido.titulo.toUpperCase();
+    doc.setFont("helvetica", "bold"); // Fuente en negrita
+    doc.setFontSize(22); // Tamaño grande
+
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const textWidth = doc.getTextWidth(titulo);
+    const x = (pageWidth - textWidth) / 2;
+
+    doc.text(titulo, x, 20); // Título centrado
+
+    // Subtítulo
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "normal"); // Volver a fuente normal
+    doc.text("Información:", 10, 30);
+
+    // Información
+    doc.setFontSize(14);
+    const texto = doc.splitTextToSize(contenido.informacion, 180);
+    doc.text(texto, 10, 40);
+
+    doc.save(`${contenido.titulo}.pdf`);
+}
+
 
 
 

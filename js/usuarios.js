@@ -84,19 +84,95 @@ const inputusuario = document.getElementById("usuario");
 const inputcontraseña = document.getElementById("contraseña");
 const btniniciosesion = document.getElementById("inicio_sesion");
 
-if(inputusuario && inputcontraseña && btniniciosesion){
-    btniniciosesion.addEventListener("click", ()=>{
+if (inputusuario && inputcontraseña && btniniciosesion) {
+    btniniciosesion.addEventListener("click", () => {
         const usuario = inputusuario.value;
         const contraseña = inputcontraseña.value;
-        array_usuarios.forEach(user => {
-            if(usuario == user.usuario && contraseña == user.contraseña){
-            window.location.href = "inicio.html";
-        }
-        });
+
         const usuarioEncontrado = array_usuarios.find(
             (u) => u.usuario === usuario && u.contraseña === contraseña
         );
-        localStorage.setItem("usuario_activo", JSON.stringify(usuarioEncontrado));
-    })
+
+        if (usuarioEncontrado) {
+            localStorage.setItem("usuario_activo", JSON.stringify(usuarioEncontrado));
+            window.location.href = "inicio.html";
+        } else {
+            const alertDIV = document.getElementById("alertDIV");
+            
+            // Verifica si ya existe una alerta
+            if (!document.querySelector(".alert-danger")) {
+                const alert = document.createElement("div");
+                alert.className = "alert alert-danger";
+                alert.role = "alert";
+                alert.textContent = "USUARIO O CONTRASEÑA INCORRECTOS";
+                alertDIV.appendChild(alert);
+
+                setTimeout(() => {
+                    alert.remove();
+                }, 5000);
+            }
+        }
+    });
 }
 
+// IMPRIMIR USUARIOS REGISTRADOS
+
+const tabla = document.getElementById("tabla");
+
+if(tabla){
+
+    const table = document.createElement("table");
+    table.className = "table table-bordered border-success text-center"
+
+    const thead = document.createElement("thead");
+    thead.className = "table-dark table-bordered border-success";
+
+    const tr = document.createElement("tr");
+
+    const th1 = document.createElement("th");
+    th1.textContent = "USUARIO";
+
+    const th2 = document.createElement("th");
+    th2.textContent = "ROL";
+
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    thead.appendChild(tr);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    array_usuarios.forEach(usuario => {
+        if(usuario.tipo == "admin"){
+            const tr = document.createElement("tr");
+
+            const td1 = document.createElement("td");
+            td1.textContent = usuario.usuario;
+
+            const td2 = document.createElement("td");
+            td2.textContent = "ADMIN";
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        }
+    });
+    array_usuarios.forEach(usuario => {
+        if(usuario.tipo == "regular"){
+            const tr = document.createElement("tr");
+
+            const td1 = document.createElement("td");
+            td1.textContent = usuario.usuario;
+
+            const td2 = document.createElement("td");
+            td2.textContent = "REGULAR";
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        }
+    });
+
+    table.appendChild(tbody);
+    tabla.appendChild(table);
+}
