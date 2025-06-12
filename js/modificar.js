@@ -119,6 +119,40 @@ if(inputtitulo_modi && inputurlimagen_modi && inputdescripcion_modi && inputinfo
     inputinformacion_modi.value = contenido.informacion;
     inputinputurlvideo_modi.value = contenido.urlvideo;
 
+    btnmodi.addEventListener("click", () => {
+    // Buscar el índice del contenido en el array
+    const index = array_contenido.findIndex(item => item.titulo === tituloSeleccionado);
+
+    if (index !== -1) {
+        array_contenido[index] = {
+            titulo: inputtitulo_modi.value,
+            urlimagen: inputurlimagen_modi.value,
+            descripcion: inputdescripcion_modi.value,
+            informacion: inputinformacion_modi.value,
+            urlvideo: inputinputurlvideo_modi.value
+        };
+
+        // Guardar los cambios
+        localStorage.setItem("array_contenido", JSON.stringify(array_contenido));
+
+        const alertDIV = document.getElementById("alertDIV");
+        const alert = document.createElement("div");
+        alert.className = "alert alert-dark";
+        alert.role = "alert"
+        alert.textContent = "Se modifico el contenido!"
+        alertDIV.appendChild(alert);
+        setTimeout(() => {
+            alert.remove();
+        }, 3000);
+        setTimeout(() => {
+            window.location.href = "contenidos.html";
+        }, 5000);
+    } else {
+        alert("Error: No se encontró el contenido a modificar ❌");
+    }
+});
 }
+
+
 
 
