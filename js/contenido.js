@@ -147,7 +147,6 @@ if(containercontenido){
             const a = document.createElement("a");
             a.className = "btn btn-success";
             a.href = "información.html";
-            // a.onclick = `info(${contenido.titulo})`
             a.onclick = function(e) {
                 e.preventDefault();
                 localStorage.setItem("info", contenido.titulo);
