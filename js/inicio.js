@@ -40,4 +40,18 @@ if(array_contenido.length > 0){
     cardbody.appendChild(a);
     card.appendChild(cardbody);
     ultimocontenido.appendChild(card);
+}else{
+    const card = document.createElement("div");
+    card.className = "card h-100 shadow";
+
+    const cardbody = document.createElement("div");
+    cardbody.className = "card-body";
+
+    const h4 = document.createElement("h4");
+    h4.className = "card-title fw-bold fst-italic";
+    h4.textContent = "NO HAY CONTENIDO DISPONIBLE";
+
+    cardbody.appendChild(h4);
+    card.appendChild(cardbody);
+    ultimocontenido.appendChild(card);
 }

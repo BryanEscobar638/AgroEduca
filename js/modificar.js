@@ -35,7 +35,7 @@ if(gestioncontenido){
         card.appendChild(cardrow);
         columna.appendChild(card);
         fila.appendChild(columna);
-        containercontenido.appendChild(fila);
+        gestioncontenido.appendChild(fila);
     }else{
         array_contenido.reverse().forEach(contenido => {
             const fila = document.createElement("div");
