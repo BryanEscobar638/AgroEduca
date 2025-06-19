@@ -10,7 +10,9 @@ Bienvenido a AgroEduca, una plataforma educativa pensada para brindar contenido 
 <br>
 - Enfocado en la educación rural y el fortalecimiento del conocimiento agrícola.
 <br>
-<a href="https://agroeduca.onrender.com">IR A LA PÁGINA</a> 
+<a href="https://agroeduca.onrender.com">IR A LA PÁGINA</a>
+<br>
+<a href="https://www.canva.com/design/DAGqyoIkx3g/nKC8cKc3DN9y7eFnTFArHQ/edit?utm_content=DAGqyoIkx3g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">IR A LA PRESENTACIÓN</a> 
 </p>
 
 <h2>¿Qué es AgroEduca?</h2>
