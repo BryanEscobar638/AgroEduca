@@ -41,52 +41,76 @@ if(gestioncontenido){
             const fila = document.createElement("div");
             fila.className = "row";
             const columna = document.createElement("div");
-            columna.className = "col-12 mb-3"
+            columna.className = "col-12 mb-3";
 
             const card = document.createElement("div");
             card.className = "card mb-3 mx-auto border-success";
-            card.style = "max-width: 540px;"
+            card.style = "max-width: 540px;";
 
             const cardrow = document.createElement("div");
             cardrow.className = "row g-0";
 
             const cardcol1 = document.createElement("div");
-            cardcol1.className = "col-md-4"
+            cardcol1.className = "col-md-4";
 
-            const img = document.createElement("img")
-            img.className = "img-fluid rounded-start"
-            img.src = contenido.urlimagen
+            const img = document.createElement("img");
+            img.className = "img-fluid rounded-start";
+            img.src = contenido.urlimagen;
 
             const cardcol2 = document.createElement("div");
-            cardcol2.className = "col-md-8"
+            cardcol2.className = "col-md-8";
 
             const cardbody = document.createElement("div");
             cardbody.className = "card-body";
 
             const h5 = document.createElement("div");
             h5.className = "card-title";
-            h5.textContent = contenido.titulo
+            h5.textContent = contenido.titulo;
 
             const p = document.createElement("p");
-            p.className = "card-text"
-            p.textContent = contenido.descripcion
+            p.className = "card-text";
+            p.textContent = contenido.descripcion;
 
             const a = document.createElement("a");
-            a.className = "btn btn-dark";
+            a.className = "btn btn-dark me-2"; // margen a la derecha
             a.href = "editar.html";
-            // a.onclick = `info(${contenido.titulo})`
-            a.onclick = function(e) {
-                e.preventDefault();
-                localStorage.setItem("info", contenido.titulo);
-                window.location.href = a.href;
+            a.onclick = function (e) {
+              e.preventDefault();
+              localStorage.setItem("info", contenido.titulo);
+              window.location.href = a.href;
             };
             a.textContent = "MODIFICAR";
+
+            const btnEliminar = document.createElement("button");
+            btnEliminar.className = "btn btn-danger";
+            btnEliminar.textContent = "ELIMINAR";
+            btnEliminar.onclick = function () {
+              const confirmar = confirm(
+                "¿Estás seguro de eliminar este contenido?"
+              );
+              if (confirmar) {
+                const tituloOriginal = contenido.titulo;
+                const indice = array_contenido.findIndex(
+                  (item) => item.titulo === tituloOriginal
+                );
+                if (indice !== -1) {
+                  array_contenido.splice(indice, 1); 
+                  localStorage.setItem(
+                    "array_contenido",
+                    JSON.stringify(array_contenido)
+                  ); 
+                  location.reload(); 
+                }
+              }
+            };
+            // 🔼 FIN AGREGADO
 
             cardbody.appendChild(h5);
             cardbody.appendChild(p);
             cardbody.appendChild(a);
+            cardbody.appendChild(btnEliminar);
             cardcol2.appendChild(cardbody);
-            cardcol1.appendChild(img)
+            cardcol1.appendChild(img);
             cardrow.appendChild(cardcol1);
             cardrow.appendChild(cardcol2);
             card.appendChild(cardrow);
